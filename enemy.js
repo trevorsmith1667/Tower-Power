@@ -1,4 +1,5 @@
-class Enemy {
+
+ class Enemy {
     constructor(verticalPosition) {
         this.x = canvas.width;
         this.y = verticalPosition;
@@ -20,5 +21,17 @@ class Enemy {
         ctx.fillStyle = 'black';
         ctx.font = '20px Arial';
         ctx.fillText(Math.floor(this.health), this.x + 15, this.y + 30)
+    }
+}
+
+function handleEnemies(){
+    for (let i = 0; i < enemies.length; i++){
+        enemies[i].updateMove();
+        enemies[i].draw();
+    }
+    if (frame % 100 === 0){
+        let verticalPosition = Math.floor(Math.random() * 5 + 1) * cellSize;
+        enemies.push(new Enemy(verticalPosition));
+        enemyPosition.push(verticalPosition);
     }
 }

@@ -1,3 +1,4 @@
+
 const canvas = document.getElementById("canvas1")
 const ctx = canvas.getContext('2d');
 canvas.width = 900;
@@ -8,6 +9,7 @@ const cellGap = 3;
 const gameGrid = [];
 const towers = [];
 const enemies = [];
+const enemyPosition = [];
 let numberOfResources = 300;
 let frame = 0;
 

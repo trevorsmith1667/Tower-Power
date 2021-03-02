@@ -9,7 +9,10 @@ function animate() {
     ctx.fillRect(0, 0, controlsBar.width, controlsBar.height);
     handleGameGrid();
     handleTowers();
+    handleEnemies();
     ctx.fillText('Resources: ' + numberOfResources, 20, 55)
+    frame++;
+    console.log(frame)
     requestAnimationFrame(animate);
 }
 
