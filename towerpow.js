@@ -11,7 +11,9 @@ const towers = [];
 const enemies = [];
 const enemyPosition = [];
 let numberOfResources = 300;
+let enemiesInterval = 600;
 let frame = 0;
+let gameOver = false;
 
 
 const mouse = {

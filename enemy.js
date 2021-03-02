@@ -28,10 +28,14 @@ function handleEnemies(){
     for (let i = 0; i < enemies.length; i++){
         enemies[i].updateMove();
         enemies[i].draw();
+        if (enemies[i].x < 0){
+            gameOver = true
+        }
     }
-    if (frame % 100 === 0){
+    if (frame % enemiesInterval === 0){
         let verticalPosition = Math.floor(Math.random() * 5 + 1) * cellSize;
         enemies.push(new Enemy(verticalPosition));
         enemyPosition.push(verticalPosition);
+        if (enemiesInterval > 120) enemiesInterval -= 50;
     }
 }

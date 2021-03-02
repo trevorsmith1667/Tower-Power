@@ -1,7 +1,11 @@
 function handleGameStatus() {
     ctx.fillStyle = 'gold';
     ctx.font = '30px Arial';
-    ctx.fillText('Resources: ' + numberOfResources, 20, 55)
+    if (gameOver){
+        ctx.fillStyle = 'black'
+        ctx.font = '30px Helvetica'
+        ctx.fillText('GAME OVER', 135, 330)
+    }
 }
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -13,7 +17,7 @@ function animate() {
     ctx.fillText('Resources: ' + numberOfResources, 20, 55)
     frame++;
     console.log(frame)
-    requestAnimationFrame(animate);
+    if (!gameOver) requestAnimationFrame(animate);
 }
 
 animate();
