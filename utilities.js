@@ -4,7 +4,7 @@ function handleGameStatus() {
     ctx.fillText('Resources: ' + numberOfResources, 20, 55)
     if (gameOver){
         ctx.fillStyle = 'black';
-        ctx.font = '60px Arial';
+        ctx.font = '90px Arial';
         ctx.fillText('GAME OVER', 135, 330);
     }
 }
