@@ -11,6 +11,7 @@ const towers = [];
 const enemies = [];
 const enemyPosition = [];
 const weapons = [];
+let points = 0;
 let numberOfResources = 300;
 let enemiesInterval = 600;
 let frame = 0;

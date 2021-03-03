@@ -24,9 +24,17 @@ function handleWeapons(){
         weapons[i].update();
         weapons[i].draw();
 
-        if (weapons[i] && weapons[i].x > canvas.width - cellSize){
-            projectiles.splice(i, 1);
+        for(let j = 0; j < enemies.length; j++){
+            if (enemies[j] && weapons[i] && collision(weapons[i], enemies[j])){
+                enemies[j].health -= weapons[i].damage;
+                weapons.splice(i, 1);
+                i--;
+            }
+
+            if (weapons[i] && weapons[i].x > canvas.width - cellSize){
+            weapons.splice(i, 1);
             i--
+            }
         }
     }
 }

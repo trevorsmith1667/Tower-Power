@@ -10,7 +10,7 @@ const gameGrid = [];
 const towers = [];
 const enemies = [];
 const enemyPosition = [];
-let numberOfResources = 300;
+let currency = 300;
 let enemiesInterval = 600;
 let frame = 0;
 let gameOver = false;
@@ -99,9 +99,9 @@ canvas.addEventListener('click', function () {
             return;
     }
     let towerCost = 100;
-    if (numberOfResources >= towerCost) {
+    if (currency >= towerCost) {
         towers.push(new Tower(gridPositionX, gridPositionY));
-        numberOfResources -= towerCost;
+        currency -= towerCost;
     }
 });
 function handleTowers() {

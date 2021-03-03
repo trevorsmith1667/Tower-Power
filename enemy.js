@@ -31,6 +31,16 @@ function handleEnemies(){
         if (enemies[i].x < 0){
             gameOver = true;
         }
+        if (enemies[i].health <= 0){
+            let moneyEarned = enemies[i].maxHealth/10;
+            numberOfResources += moneyEarned;
+            points += moneyEarned;
+            const findIndex = enemyPosition.indexOf(enemies[i].y)
+            enemyPosition.splice((findIndex, 1))
+            enemies.splice(i, 1);
+            i--;
+            console.log(enemyPosition);
+        }
     }
     if (frame % enemiesInterval === 0){
         let verticalPosition = Math.floor(Math.random() * 5 + 1) * cellSize;

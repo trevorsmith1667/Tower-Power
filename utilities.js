@@ -1,7 +1,8 @@
 function handleGameStatus() {
     ctx.fillStyle = 'silver';
     ctx.font = '30px Arial';
-    ctx.fillText('Resources: ' + numberOfResources, 20, 55)
+    ctx.fillText('Resources: ' + numberOfResources, 20, 80)
+    ctx.fillText('Score: ' + points, 20, 40)
     if (gameOver){
         ctx.fillStyle = 'black';
         ctx.font = '90px Arial';
@@ -14,11 +15,10 @@ function animate() {
     ctx.fillRect(0, 0, controlsBar.width, controlsBar.height);
     handleGameGrid();
     handleTowers();
-    handleEnemies();
     handleWeapons();
+    handleEnemies();
     handleGameStatus();
     frame++;
-    console.log(frame)
     if (!gameOver) requestAnimationFrame(animate);
 }
 
