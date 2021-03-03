@@ -15,6 +15,7 @@ function animate() {
     handleGameGrid();
     handleTowers();
     handleEnemies();
+    handleWeapons();
     handleGameStatus();
     frame++;
     console.log(frame)

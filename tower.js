@@ -17,6 +17,13 @@ class Tower {
         ctx.font = '20px Arial';
         ctx.fillText(Math.floor(this.health), this.x + 15, this.y + 30)
     }
+    update(){
+        this.timer++;
+        if (this.timer % 100 === 0){
+            weapons.push(new Weapon(this.x + 70, this.y + 70));
+
+        }
+    }
 }
 canvas.addEventListener('click', function () {
     const gridPositionX = mouse.x - (mouse.x % cellSize);
@@ -35,6 +42,7 @@ canvas.addEventListener('click', function () {
 function handleTowers() {
     for (let i = 0; i < towers.length; i++) {
         towers[i].draw();
+        towers[i].update();
         for(let j = 0; j < enemies.length; j++){
             if (collision(towers[i], enemies[j])){
                 enemies[j].movement = 0
