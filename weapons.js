@@ -3,7 +3,7 @@ class Weapon {
         this.x = x;
         this.y = y;
         this.width = 10;
-        this.height = 20;
+        this.height = 10;
         this.damage = 20;
         this.speed = 5;
     }
@@ -25,15 +25,16 @@ function handleWeapons(){
         weapons[i].draw();
 
         for(let j = 0; j < enemies.length; j++){
-            if (enemies[j] && weapons[i] && collision(weapons[i], enemies[j])){
+            if (enemies[j] && weapons[i] && collision(weapons[i], enemies[j]))
+            {
                 enemies[j].health -= weapons[i].damage;
                 weapons.splice(i, 1);
                 i--;
             }
 
             if (weapons[i] && weapons[i].x > canvas.width - cellSize){
-            weapons.splice(i, 1);
-            i--
+                weapons.splice(i, 1);
+                i--
             }
         }
     }

@@ -1,12 +1,19 @@
 function handleGameStatus() {
     ctx.fillStyle = 'silver';
     ctx.font = '30px Arial';
-    ctx.fillText('Resources: ' + numberOfResources, 20, 80)
     ctx.fillText('Score: ' + points, 20, 40)
+    ctx.fillText('Resources: ' + numberOfResources, 20, 80)
     if (gameOver){
         ctx.fillStyle = 'black';
         ctx.font = '90px Arial';
         ctx.fillText('GAME OVER', 135, 330);
+    }
+    if (points >= winScore && enemies.length === 0){
+        ctx.fillStyle = 'black'
+        ctx.font = '60px Arial'
+        ctx.fillText('LEVEL COMPLETE', 130, 300);
+        ctx.font = "30px Arial" 
+        ctx.fillText('You scored: ' + points + '!', 134, 340);
     }
 }
 function animate() {
@@ -15,6 +22,7 @@ function animate() {
     ctx.fillRect(0, 0, controlsBar.width, controlsBar.height);
     handleGameGrid();
     handleTowers();
+    handlePowerups();
     handleWeapons();
     handleEnemies();
     handleGameStatus();
@@ -34,3 +42,7 @@ function collision(first, second) {
         return true;
     };
 };
+
+window.addEventListener('resize', function(){
+    canvasPosition = canvas.getBoundingClientRect();
+})

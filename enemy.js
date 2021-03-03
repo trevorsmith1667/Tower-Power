@@ -3,8 +3,8 @@
     constructor(verticalPosition) {
         this.x = canvas.width;
         this.y = verticalPosition;
-        this.width = cellSize;
-        this.height = cellSize;
+        this.width = cellSize -cellGap * 2;
+        this.height = cellSize - cellGap * 2;
         this.speed = Math.random() * 0.2 + 0.4;
         this.movement = this.speed;
         this.health = 100;
@@ -43,7 +43,7 @@ function handleEnemies(){
         }
     }
     if (frame % enemiesInterval === 0){
-        let verticalPosition = Math.floor(Math.random() * 5 + 1) * cellSize;
+        let verticalPosition = Math.floor(Math.random() * 5 + 1) * cellSize + cellGap;
         enemies.push(new Enemy(verticalPosition));
         enemyPosition.push(verticalPosition);
         if (enemiesInterval > 120) enemiesInterval -= 50;

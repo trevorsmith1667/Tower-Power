@@ -54,7 +54,7 @@ function handleTowers() {
         for(let j = 0; j < enemies.length; j++){
             if (towers[i] && collision(towers[i], enemies[j])){
                 enemies[j].movement = 0
-                towers[i].health -= 0.2;
+                towers[i].health -= 1;
             }
             if (towers[i] && towers[i].health <= 0){
                 towers.splice(i, 1)
