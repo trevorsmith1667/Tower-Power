@@ -29,7 +29,7 @@ function handleEnemies(){
         enemies[i].updateMove();
         enemies[i].draw();
         if (enemies[i].x < 0){
-            gameOver = true
+            gameOver = true;
         }
     }
     if (frame % enemiesInterval === 0){

@@ -35,5 +35,16 @@ canvas.addEventListener('click', function () {
 function handleTowers() {
     for (let i = 0; i < towers.length; i++) {
         towers[i].draw();
+        for(let j = 0; j < enemies.length; j++){
+            if (collision(towers[i], enemies[j])){
+                enemies[j].movement = 0
+                towers[i].health -= 0.2;
+            }
+            if (towers[i] && towers[i].health <= 0){
+                towers.splice(i, 1)
+                i--;
+                enemies[j].movement = enemies[j].speed
+            }
+        }
     }
 }

@@ -1,10 +1,11 @@
 function handleGameStatus() {
-    ctx.fillStyle = 'gold';
+    ctx.fillStyle = 'silver';
     ctx.font = '30px Arial';
+    ctx.fillText('Resources: ' + numberOfResources, 20, 55)
     if (gameOver){
-        ctx.fillStyle = 'black'
-        ctx.font = '30px Helvetica'
-        ctx.fillText('GAME OVER', 135, 330)
+        ctx.fillStyle = 'black';
+        ctx.font = '60px Arial';
+        ctx.fillText('GAME OVER', 135, 330);
     }
 }
 function animate() {
@@ -14,7 +15,7 @@ function animate() {
     handleGameGrid();
     handleTowers();
     handleEnemies();
-    ctx.fillText('Resources: ' + numberOfResources, 20, 55)
+    handleGameStatus();
     frame++;
     console.log(frame)
     if (!gameOver) requestAnimationFrame(animate);
