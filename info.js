@@ -12,7 +12,7 @@ class Meter {
     update(){
         this.y -= 0.3;
         this.lifespan += 1;
-        if (this.opacity > 0.01) this.opacity -= 0.01
+        if (this.opacity > 0.05) this.opacity -= 0.05;
 
         
     }

@@ -36,7 +36,7 @@ function handleEnemies(){
             numberOfResources += moneyEarned;
             points += moneyEarned;
             const findIndex = enemyPosition.indexOf(enemies[i].y)
-            enemyPosition.splice((findIndex, 1))
+            enemyPosition.splice(findIndex, 1)
             enemies.splice(i, 1);
             i--;
             console.log(enemyPosition);
