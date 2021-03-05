@@ -33,13 +33,15 @@ function handleEnemies(){
         }
         if (enemies[i].health <= 0){
             let moneyEarned = enemies[i].maxHealth/10;
+            meters.push(new Meter('+' + moneyEarned, enemies[i].x, enemies[i].y, 30, 'black'))
+            meters.push(new Meter('+' + powerups[i].amount, 250, 50, 30, 'blue'));
             numberOfResources += moneyEarned;
             points += moneyEarned;
             const findIndex = enemyPosition.indexOf(enemies[i].y)
             enemyPosition.splice(findIndex, 1)
             enemies.splice(i, 1);
             i--;
-            console.log(enemyPosition);
+    
         }
     }
     if (frame % enemiesInterval === 0){
