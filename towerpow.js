@@ -15,7 +15,7 @@ const powerups = [];
 const winScore = 50;
 let points = 0;
 let numberOfResources = 300;
-let enemiesInterval = 600;
+let enemiesInterval = 950;
 let frame = 0;
 let gameOver = false;
 
