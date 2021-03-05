@@ -26,6 +26,7 @@ function animate() {
     handleWeapons();
     handleEnemies();
     handleGameStatus();
+    handleMeters();
     frame++;
     if (!gameOver) requestAnimationFrame(animate);
 }
