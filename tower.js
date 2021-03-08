@@ -111,7 +111,7 @@ function chooseTower(){
     let card2stroke = 'silver'
 
     ctx.lineWidth = 1;
-    ctx.fillStyle = rgba(0,0, 0, 0.2);
+    // ctx.fillStyle = rgba(0, 0, 0, 0.2);
     ctx.fillRect(card1.x, card1.y, card1.width, card1.height);
     ctx.strokeStyle = card1stroke;
     ctx.strokeRect(card1.x, card1.y, card1.width, card1.height);
