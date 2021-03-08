@@ -25,8 +25,7 @@ class Tower {
     }
 
     draw() {
-        // ctx.fillStyle = "purple";
-        // ctx.fillRect(this.x, this.y, this.width, this.height);
+        
         ctx.fillStyle = 'black';
         ctx.font = '20px Arial';
         ctx.fillText(Math.floor(this.health), this.x + 15, this.y + 10)
@@ -50,7 +49,7 @@ class Tower {
     }
         if (this.shoot && this.shooting){ 
             //this will affect vertical weapon position
-            weapons.push(new Weapon(this.x + 70, this.y + 50));  
+            weapons.push(new Weapon(this.x + 70, this.y + 40));  
             this.shooting = false;   
         }
     };
@@ -118,7 +117,7 @@ function chooseTower(){
     ctx.drawImage(tower1, 0, 0, 194, 194, 0, 5, 194/2, 194/2);
     ctx.fillRect(card2.x, card2.y, card2.width, card2.height);
     ctx.drawImage(tower2, 0, 0, 194, 194, 80, 5, 194 / 2, 194 / 2);
-
+    ctx.strokeStyle = card2stroke;
     ctx.strokeRect(card2.x, card2.y, card2.width, card2.height);
 
 }
