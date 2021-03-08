@@ -1,5 +1,7 @@
 const tower1 = new Image();
     tower1.src = './assets/defender1.png';
+const tower2 = new Image();
+    tower2.src = './assets/defender2.png'
 
 
 class Tower {
@@ -23,11 +25,11 @@ class Tower {
     }
 
     draw() {
-        ctx.fillStyle = "purple";
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        // ctx.fillStyle = "purple";
+        // ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.fillStyle = 'black';
         ctx.font = '20px Arial';
-        ctx.fillText(Math.floor(this.health), this.x + 15, this.y + 30)
+        ctx.fillText(Math.floor(this.health), this.x + 15, this.y + 10)
         ctx.drawImage(tower1, this.frameX * this.spriteWidth, 0, this.spriteWidth, 
             this.spriteHeight, this.x, this.y, this.width, this.height);
     }
@@ -38,7 +40,16 @@ class Tower {
         else {this.frameX = this.minFrame}
         if (this.frameX === 15) this.shooting = true;
     }
+
+    if (this.shoot){
+        this.minFrame = 0;
+        this.maxFrame = 15;
+    }else {
+        this.minFrame = 17;
+        this.maxFrame = 23
+    }
         if (this.shoot && this.shooting){ 
+            //this will affect vertical weapon position
             weapons.push(new Weapon(this.x + 70, this.y + 50));  
             this.shooting = false;   
         }
@@ -81,4 +92,33 @@ function handleTowers() {
             }
         }
     }
+}
+const card1 = {
+    x: 90, 
+    y: 10, 
+    width: 70, 
+    height: 85
+}
+
+const card2 = {
+    x: 90, 
+    y: 10, 
+    width: 70, 
+    height: 85
+}
+function chooseTower(){
+    let card1stroke = 'black'
+    let card2stroke = 'silver'
+
+    ctx.lineWidth = 1;
+    ctx.fillStyle = rgba(0,0, 0, 0.2);
+    ctx.fillRect(card1.x, card1.y, card1.width, card1.height);
+    ctx.strokeStyle = card1stroke;
+    ctx.strokeRect(card1.x, card1.y, card1.width, card1.height);
+    ctx.drawImage(tower1, 0, 0, 194, 194, 0, 5, 194/2, 194/2);
+    ctx.fillRect(card2.x, card2.y, card2.width, card2.height);
+    ctx.drawImage(tower2, 0, 0, 194, 194, 80, 5, 194 / 2, 194 / 2);
+
+    ctx.strokeRect(card2.x, card2.y, card2.width, card2.height);
+
 }
