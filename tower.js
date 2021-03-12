@@ -21,6 +21,7 @@ class Tower {
         this.spriteHeight = 194;
         this.minFrame = 0; 
         this.maxFrame = 16;
+        this.chosenTower = chosenTower
 
     }
 
@@ -29,8 +30,13 @@ class Tower {
         ctx.fillStyle = 'black';
         ctx.font = '20px Arial';
         ctx.fillText(Math.floor(this.health), this.x + 15, this.y + 10)
-        ctx.drawImage(tower1, this.frameX * this.spriteWidth, 0, this.spriteWidth, 
-            this.spriteHeight, this.x, this.y, this.width, this.height);
+        if (this.chosenTower === 1){
+            ctx.drawImage(tower1, this.frameX * this.spriteWidth, 0, this.spriteWidth, 
+                this.spriteHeight, this.x, this.y, this.width, this.height);
+        } else if (this.chosenTower === 2){
+            ctx.drawImage(tower2, this.frameX * this.spriteWidth, 0, this.spriteWidth,
+                this.spriteHeight, this.x, this.y, this.width, this.height);
+        }
     }
     update(){
         //this line will set shoot speed 
