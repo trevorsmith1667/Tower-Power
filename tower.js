@@ -67,7 +67,7 @@ canvas.addEventListener('click', function () {
         towers.push(new Tower(gridPositionX, gridPositionY));
         numberOfResources -= towerCost;
     } else {
-        meters.push(new Meter("Not Enough Resources", mouse.x, mouse.y, 15, 'green'))
+        meters.push(new Meter("Not Enough Resources", mouse.x, mouse.y, 20, 'green'))
     }
 });
 function handleTowers() {
