@@ -56,7 +56,7 @@ function handleEnemies(){
         if (enemies[i].health <= 0){
             let moneyEarned = enemies[i].maxHealth/10;
             meters.push(new Meter('+' + moneyEarned, enemies[i].x, enemies[i].y, 30, 'black'))
-            meters.push(new Meter('+' + moneyEarned, 250, 50, 30, 'blue'));
+            meters.push(new Meter('+' + moneyEarned, 250, 50, 30, 'silver'));
             numberOfResources += moneyEarned;
             points += moneyEarned;
             const findIndex = enemyPosition.indexOf(enemies[i].y)

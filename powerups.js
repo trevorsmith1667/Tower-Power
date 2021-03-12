@@ -26,8 +26,8 @@ function handlePowerups(){
         powerups[i].draw();
         if (powerups[i] && mouse.x && mouse.y && collision(powerups[i], mouse)){
             numberOfResources += powerups[i].amount;
-            meters.push( new Meter('+' + powerups[i].amount, powerups[i].x, powerups[i].y, 30, 'black'))
-            meters.push(new Meter('+' + powerups[i].amount, 250, 50, 30, 'blue'));
+            meters.push(new Meter('+' + powerups[i].amount, powerups[i].x, powerups[i].y, 30, 'black'))
+            meters.push(new Meter('+' + powerups[i].amount, 250, 50, 30, 'gold'));
             powerups.splice(i,1);
             i--
         }

@@ -3,29 +3,38 @@ const canvas = document.getElementById("canvas1")
 const ctx = canvas.getContext('2d');
 canvas.width = 900;
 canvas.height = 600;
-
 const cellSize = 100;
 const cellGap = 3;
+
 const gameGrid = [];
 const towers = [];
 const enemies = [];
 const enemyPosition = [];
 const weapons = [];
 const powerups = [];
+
 const winScore = 50;
 let points = 0;
 let numberOfResources = 300;
 let enemiesInterval = 950;
 let frame = 0;
 let gameOver = false;
+let chosenTower = 1;
 
 
 const mouse = {
     x: 10,
     y: 10,
     width: 0.1,
-    height: 0.1
+    height: 0.1,
+    clicked: false
 }
+canvas.addEventListener('mousedown', function(){
+    mouse.clicked = true
+})
+canvas.addEventListener('mouseup', function () {
+    mouse.clicked = false
+})
 let canvasPosition = canvas.getBoundingClientRect();
 canvas.addEventListener('mousemove', function(e){
     mouse.x = e.x - canvasPosition.left;

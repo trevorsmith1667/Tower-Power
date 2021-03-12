@@ -93,7 +93,7 @@ function handleTowers() {
     }
 }
 const card1 = {
-    x: 90, 
+    x: 10, 
     y: 10, 
     width: 70, 
     height: 85
@@ -107,10 +107,27 @@ const card2 = {
 }
 function chooseTower(){
     let card1stroke = 'black'
-    let card2stroke = 'silver'
+    let card2stroke = 'black'
+    if (collision(mouse, card1) && mouse.clicked){
+        chosenTower = 1
+    } else if (collision(mouse, card2) && mouse.clicked){
+        chosenTower = 2;
+    }
+    if (chosenTower === 1){
+        card1stroke = "silver"
+        card2stroke = 'black'
+    } else if (chosenTower === 2){
+        card1stroke = 'black'
+        card2stroke = 'silver'
+
+    } else {
+        card1stroke = 'black'
+        card2stroke = 'silver'
+    }
+    
 
     ctx.lineWidth = 1;
-    // ctx.fillStyle = rgba(0, 0, 0, 0.2);
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
     ctx.fillRect(card1.x, card1.y, card1.width, card1.height);
     ctx.strokeStyle = card1stroke;
     ctx.strokeRect(card1.x, card1.y, card1.width, card1.height);
